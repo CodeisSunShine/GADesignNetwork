@@ -1,0 +1,6 @@
+framework module Pods_GADesignNetwork_Example {
+  umbrella header "Pods-GADesignNetwork_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
