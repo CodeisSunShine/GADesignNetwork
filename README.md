@@ -27,3 +27,5 @@ CodeisSunShine, myloveiscodejie@163.com
 ## License
 
 GADesignNetwork is available under the MIT license. See the LICENSE file for more info.
+基于AF封装的网络库
+ 2f6002a92cbcedb27d63b030788ea67212b6d320
