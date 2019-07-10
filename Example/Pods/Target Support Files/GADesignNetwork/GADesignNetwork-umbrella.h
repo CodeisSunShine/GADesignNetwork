@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "GADNTest.h"
 
 FOUNDATION_EXPORT double GADesignNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char GADesignNetworkVersionString[];

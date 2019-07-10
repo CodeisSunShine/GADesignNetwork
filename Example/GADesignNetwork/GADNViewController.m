@@ -7,6 +7,7 @@
 //
 
 #import "GADNViewController.h"
+#import "GADNTest.h"
 
 @interface GADNViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [[[GADNTest alloc] init] test];
 }
 
 - (void)didReceiveMemoryWarning
