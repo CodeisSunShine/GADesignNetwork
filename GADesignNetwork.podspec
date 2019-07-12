@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 还未正式进入编写
                        DESC
-
+					   
   s.homepage         = 'https://github.com/CodeisSunShine/GADesignNetwork'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -30,8 +30,21 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'GADesignNetwork/Classes/**/*'
   
+  if ENV['use_lib'] || ENV["#{s.name}_use_lib"]
+    puts '---------binary-------'
+	  s.ios.vendored_framework = "Framework/#{s.version}/#{s.name}.framework"
+	  #这种是帮你打包成bundle
+	  s.resource_bundles = {
+      "#{s.name}" => ["#{s.name}/Assets/*.{png,xib,plist}"]
+    }
+    #这种是你已经打包好了bundle，推荐这种，可以省去每次pod帮你生成bundle的时间
+    s.resources = "#{s.name}/Assets/*.bundle"
+  else
+    puts '---------source-------'
+	  s.source_files = 'GADesignNetwork/Classes/**/*'
+    s.public_header_files = "#{s.name}/Classes/**/*.h"
+  end
   # s.resource_bundles = {
   #   'GADesignNetwork' => ['GADesignNetwork/Assets/*.png']
   # }
